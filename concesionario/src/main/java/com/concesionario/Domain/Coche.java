@@ -12,6 +12,9 @@ public class Coche {
     private String modelo;
     private int anyo;
 
+    public Coche() {
+    }
+
     public Coche(String matricula) throws InvalidArgumentException {
         String errorMatricula = "Matricula es obligatoria";
         if (matricula == null) {

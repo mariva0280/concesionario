@@ -1,5 +1,6 @@
 package com.concesionario.Service;
 
+import com.concesionario.Controller.CocheInput;
 import com.concesionario.Controller.CocheMatriculaOutput;
 import com.concesionario.Controller.CocheOutput;
 import com.concesionario.Domain.Coche;
@@ -35,5 +36,10 @@ public class CocheService {
             throw new NotFoundException("El coche con la matricula " + matricula + " no existe");
         }
 
+    }
+
+    public void addCar(CocheInput cocheInput) throws InvalidArgumentException {
+        Coche coche = new Coche(cocheInput.getMatricula(), cocheInput.getMarca(), cocheInput.getModelo(), cocheInput.getAnyo());
+        cocheRepository.save(coche);
     }
 }
